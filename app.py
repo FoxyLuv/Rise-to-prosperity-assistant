@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, send_from_directory import os
 from flask_cors import CORS
 import anthropic
 
@@ -47,7 +47,7 @@ If you don't know a specific detail (like exact shipping times, current inventor
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return send_from_directory(os.path.dirname(os.path.abspath(__file__)) 'index.html')
 
 @app.route("/chat", methods=["POST"])
 def chat():
