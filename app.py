@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import anthropic
 
-app = Flask(__name__)
++app = Flask(__name__, template_folder='.')
 CORS(app)
 
 client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
